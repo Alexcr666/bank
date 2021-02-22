@@ -186,7 +186,7 @@ class _QRViewExampleState extends State<QRViewExample> {
       setState(() {
         result = scanData;
       });
-      if(code != result.code) {
+      if (code != result.code) {
         code = result.code;
         _showModal(context, result.code);
       }
@@ -255,9 +255,9 @@ class _QRViewExampleState extends State<QRViewExample> {
                                         WidgetProyect().listMoney(
                                             context,
                                             parts[3],
-                                            parts[2] == 'true'? true : false,
-                                            parts[4] == 'true'? true : false,
-                                            int.parse(parts[1])*100,
+                                            parts[2] == 'true' ? true : false,
+                                            parts[4] == 'true' ? true : false,
+                                            int.parse(parts[1]) * 100,
                                             parts[0],
                                             false),
                                       ],

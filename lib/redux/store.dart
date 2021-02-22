@@ -20,6 +20,7 @@ class Redux {
 
   static Future<void> init() async {
     _store = Store<AppState>(appReducer,
-        initialState: new AppState.initial(), middleware: [LoginMiddleware(api), WeatherMiddleware(api)]);
+        initialState: new AppState.initial(),
+        middleware: [LoginMiddleware(api), WeatherMiddleware(api)]);
   }
 }

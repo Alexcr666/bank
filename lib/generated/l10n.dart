@@ -185,10 +185,10 @@ class AppLocalizations {
     );
   }
 
-  /// `Recibir dinero`
+  /// `Receive money`
   String get createQr {
     return Intl.message(
-      'Recibir dinero',
+      'Receive money',
       name: 'createQr',
       desc: '',
       args: [],

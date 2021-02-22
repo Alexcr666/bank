@@ -3,6 +3,7 @@ import 'package:bank_todo/ui/main/main_screen.dart';
 
 class StartLoadingAction {
   StartLoadingAction(this.email, this.password);
+
   final String email;
   final String password;
 }

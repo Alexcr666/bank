@@ -37,7 +37,8 @@ class API {
   }
 
   Future getCurrentWeather(String apiKey, double lat, double lon) async {
-    var url = Uri.http(weatherAPIURL, GET_CURRENT_WEATHER, {"access_key": apiKey, "query": '$lat,$lon'});
+    var url = Uri.http(weatherAPIURL, GET_CURRENT_WEATHER,
+        {"access_key": apiKey, "query": '$lat,$lon'});
 
     print(url);
     MyHttpResponse response = await getRequest(url);

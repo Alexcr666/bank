@@ -28,16 +28,19 @@ class WidgetProyect {
           height: 10,
         ),
         Text(
-          type != true?AppLocalizations.of(context).colombianpeso:AppLocalizations.of(context).americandollar ,
+          type != true
+              ? AppLocalizations.of(context).colombianpeso
+              : AppLocalizations.of(context).americandollar,
           style: TextStyle(
               color: Colors.grey, fontSize: AdaptScreen.screenWidth() * 0.05),
         ),
         SizedBox(
           height: 10,
         ),
-
         Text(
-          typeProfile == true ?AppLocalizations.of(context).stream:AppLocalizations.of(context).ahorro,
+          typeProfile == true
+              ? AppLocalizations.of(context).stream
+              : AppLocalizations.of(context).ahorro,
           style: TextStyle(
               color: Colors.grey, fontSize: AdaptScreen.screenWidth() * 0.05),
         ),
@@ -86,9 +89,11 @@ class WidgetProyect {
                   _firebaseRefUser.child("money").once().then((value) {
                     print("prueba1:_ " + value.value.toString());
                     int buy = int.parse(value.value.toString()) - size;
-                    if(buy <= 0){
-                      Fluttertoast.showToast(msg: AppLocalizations.of(context).insufficientbalance);
-                    }else{
+                    if (buy <= 0) {
+                      Fluttertoast.showToast(
+                          msg:
+                              AppLocalizations.of(context).insufficientbalance);
+                    } else {
                       _firebaseRefUser.set({
                         "money": buy,
                       });
@@ -106,12 +111,10 @@ class WidgetProyect {
                           "money": buy,
                         });
                       });
-                      Fluttertoast.showToast(msg: AppLocalizations.of(context).operationSucefull);
+                      Fluttertoast.showToast(
+                          msg: AppLocalizations.of(context).operationSucefull);
                       Navigator.popAndPushNamed(context, 'main');
-
-
                     }
-
                   });
                 }),
         SizedBox(

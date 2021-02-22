@@ -14,12 +14,10 @@ class UserState {
   });
 
   factory UserState.initial() {
-    return new UserState(
-        isLoading: false, loginError: false, user: null);
+    return new UserState(isLoading: false, loginError: false, user: null);
   }
 
-  UserState copyWith(
-      {bool isLoading, bool loginError, UserModel user}) {
+  UserState copyWith({bool isLoading, bool loginError, UserModel user}) {
     return new UserState(
         isLoading: isLoading ?? this.isLoading,
         loginError: loginError ?? this.loginError,

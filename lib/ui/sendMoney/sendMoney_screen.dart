@@ -30,36 +30,36 @@ class _sendMoneyScreenState extends State<sendMoneyScreen> {
         body: SafeArea(
           child: Container(
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(height: 200.0),
-                    Container(
-                      child: Center(
-                        child: Image(
-                          image: AssetImage(AssetsRoutes.loginIcon),
-                          height: 120.0,
-                        ),
-                      ),
+            child: Column(
+              children: [
+                SizedBox(height: 200.0),
+                Container(
+                  child: Center(
+                    child: Image(
+                      image: AssetImage(AssetsRoutes.loginIcon),
+                      height: 120.0,
                     ),
-                    Form(
-                      key: _formKey,
-                      child: Column(
-                        children: <Widget>[
-                          _emailField(),
-                          SizedBox(
-                            height: 20.0,
-                          ),
-                          _passwordField(),
-                          SizedBox(
-                            height: 20.0,
-                          ),
-                          _submitButtom(context, viewModel)
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              )),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: <Widget>[
+                      _emailField(),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      _passwordField(),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      _submitButtom(context, viewModel)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )),
         ),
       ),
       onDidChange: (viewModel) {
@@ -135,7 +135,7 @@ class _sendMoneyScreenState extends State<sendMoneyScreen> {
           child: loginView.isLoading == true
               ? CircularProgressIndicator()
               : Text(AppLocalizations.of(context).signIn,
-              style: TextStyle(color: AppColors.fontColor, fontSize: 15.0)),
+                  style: TextStyle(color: AppColors.fontColor, fontSize: 15.0)),
         ),
         color: AppColors.mainColor,
         onPressed: () {

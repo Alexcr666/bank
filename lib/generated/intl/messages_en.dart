@@ -27,7 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cash" : MessageLookupByLibrary.simpleMessage("Cash"),
     "colombianpeso" : MessageLookupByLibrary.simpleMessage("Colombian peso"),
     "comment" : MessageLookupByLibrary.simpleMessage("Comment"),
-    "createQr" : MessageLookupByLibrary.simpleMessage("Recibir dinero"),
+    "createQr" : MessageLookupByLibrary.simpleMessage("Receive money"),
     "currentAccount" : MessageLookupByLibrary.simpleMessage("Current"),
     "email" : MessageLookupByLibrary.simpleMessage("Email address"),
     "emailError" : MessageLookupByLibrary.simpleMessage("Invalid email address!"),

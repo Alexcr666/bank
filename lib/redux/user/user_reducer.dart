@@ -22,7 +22,6 @@ UserState _loginFailed(UserState state, LoginFailedAction action) {
   return state.copyWith(user: null, isLoading: false, loginError: true);
 }
 
-
 UserState _logoutUser(UserState state, LogoutUserAction action) {
   return state.copyWith(user: null, isLoading: false, loginError: false);
 }

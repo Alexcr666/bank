@@ -4,8 +4,7 @@ import 'package:bank_todo/ui/sendMoney/sendMoney_screen.dart';
 import 'package:bank_todo/ui/transferMoney/transferMoney_screen.dart';
 import 'package:flutter/material.dart';
 
-final mainRoutes ={
-
+final mainRoutes = {
   'login': (BuildContext context) => LoginScreen(),
   'main': (BuildContext context) => MainScreen(),
   'transferMoney': (BuildContext context) => transferMoneyScreen(),

@@ -7,14 +7,11 @@ class AppState {
   final UserState userState;
   final WeatherState weatherState;
 
-
-  AppState({ @required this.userState,  @required this.weatherState});
+  AppState({@required this.userState, @required this.weatherState});
 
   factory AppState.initial() {
     return AppState(
-      userState: UserState.initial(),
-      weatherState: WeatherState.initial()
-    );
+        userState: UserState.initial(), weatherState: WeatherState.initial());
   }
 
   AppState copyWith({
@@ -44,7 +41,6 @@ class AppState {
         '\nuserState: '
         '\n$userState}'
         '\nweatherState: '
-        '\n$weatherState}'
-        ;
+        '\n$weatherState}';
   }
 }

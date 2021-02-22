@@ -22,6 +22,8 @@ import 'package:money2/money2.dart';
 import 'dart:math';
 import 'dart:ui';
 
+import '../../styles/colors.dart';
+
 class MainScreen extends StatelessWidget {
   final String apiKey = '6ed5914d0446030f513756c4a11ab46d';
   TextStyle moneyStyle;
@@ -134,9 +136,9 @@ class MainScreen extends StatelessWidget {
         marginBottom: 20,
 
         icon: Icons.add,
-        activeIcon: Icons.remove,
+        activeIcon: Icons.close,
 
-        buttonSize: 56.0,
+        buttonSize: 60.0,
         visible: true,
 
         closeManually: false,
@@ -149,8 +151,8 @@ class MainScreen extends StatelessWidget {
         onClose: () => print('DIAL CLOSED'),
         tooltip: 'Speed Dial',
         heroTag: 'speed-dial-hero-tag',
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        backgroundColor: AppColors.mainColor,
+        foregroundColor: Colors.white,
         elevation: 8.0,
         shape: CircleBorder(),
         // orientation: SpeedDialOrientation.Up,
@@ -198,7 +200,8 @@ class MainScreen extends StatelessWidget {
             labelStyle: TextStyle(fontSize: 18.0),
             onTap: () async {
               await Redux.store.dispatch(LogoutUserAction());
-              Navigator.of(context).pushNamedAndRemoveUntil('login', (Route<dynamic> route) => false);
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                  'login', (Route<dynamic> route) => false);
             },
             onLongPress: () => print('THIRD CHILD LONG PRESS'),
           ),

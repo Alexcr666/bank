@@ -11,7 +11,6 @@
   "thriftAccount": "Saving",
   "welcome": "welcome",
   "hello": "Hello",
-  "seeMore": "See weather",
   "apiError": "An error has been ocurred, contact with the administrator",
   "readQr": "Transfer money",
   "createQr": "Receive money",

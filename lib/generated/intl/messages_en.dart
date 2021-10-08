@@ -43,7 +43,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "price" : MessageLookupByLibrary.simpleMessage("Price"),
     "readQr" : MessageLookupByLibrary.simpleMessage("Transfer money"),
     "requiredfield" : MessageLookupByLibrary.simpleMessage("Required field"),
-    "seeMore" : MessageLookupByLibrary.simpleMessage("See weather"),
     "selectaccounttype" : MessageLookupByLibrary.simpleMessage("Select account type"),
     "selectcurrencytype" : MessageLookupByLibrary.simpleMessage("Select currency type"),
     "sendMoney" : MessageLookupByLibrary.simpleMessage("Send money"),

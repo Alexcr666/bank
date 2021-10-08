@@ -6,8 +6,7 @@ import 'package:bank_todo/redux/store.dart';
 import 'package:bank_todo/redux/user/user_actions.dart';
 import 'package:bank_todo/app/app_constants.dart';
 import 'package:bank_todo/redux/user/user_state.dart';
-import 'package:bank_todo/redux/weather/weather_actions.dart';
-import 'package:bank_todo/redux/weather/weather_state.dart';
+
 import 'package:bank_todo/styles/colors.dart';
 import 'package:bank_todo/ui/qr/qr_screen.dart';
 import 'package:bank_todo/ui/transferMoney/transferMoney_screen.dart';
@@ -46,7 +45,7 @@ class MainScreen extends StatelessWidget {
           builder: (context, state) {
             return RefreshIndicator(
                 onRefresh: () {
-                  getLocation();
+
                   var action = RefreshItemsAction();
                   Redux.store
                       .dispatch(UpdateUserInfo(state.userState.user, action));
@@ -77,55 +76,26 @@ class MainScreen extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 12.0),
                               child: Column(
+
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  SizedBox(
+                                      height:
+                                      AdaptScreen.screenHeight() * 0.04),
                                   state.userState.user != null
                                       ? Text(
                                           '${AppLocalizations.of(context).hello} ${state.userState.user.name}, ${AppLocalizations.of(context).welcome}',
                                           style: TextStyle(
                                               fontSize:
                                                   AdaptScreen.screenWidth() *
-                                                      0.05),
+                                                      0.07),
                                         )
                                       : SizedBox.shrink(),
                                   SizedBox(
                                       height:
                                           AdaptScreen.screenHeight() * 0.04),
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    child: Center(
-                                        child: Container(
-                                            width: AdaptScreen.screenWidth() *
-                                                0.95,
-                                            height: AdaptScreen.screenHeight() *
-                                                0.15,
-                                            alignment: Alignment.center,
-                                            color:
-                                                AppColors.boxAlternativeColor,
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal:
-                                                  AdaptScreen.screenWidth() *
-                                                      0.03,
-                                              vertical:
-                                                  AdaptScreen.screenHeight() *
-                                                      0.02,
-                                            ),
-                                            child: state.weatherState.current !=
-                                                    null
-                                                ? _weather()
-                                                : state.weatherState.isLoading
-                                                    ? CircularProgressIndicator()
-                                                    : FlatButton(
-                                                        onPressed: () {
-                                                          getLocation();
-                                                        },
-                                                        child: Text(
-                                                          AppLocalizations.of(
-                                                                  context)
-                                                              .seeMore,
-                                                          style: titleStyle,
-                                                        )))),
-                                  ),
+
+
                                 ],
                               ),
                             )),
@@ -210,29 +180,7 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget _weather() {
-    return StoreConnector<AppState, WeatherState>(
-      converter: (store) => store.state.weatherState,
-      builder: (BuildContext context, WeatherState weatherState) {
-        return weatherState.current != null
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  FadeInImage.assetNetwork(
-                    image: weatherState.current.current.weatherIcons[0],
-                    placeholder: circularProgressIndicator,
-                    placeholderScale: 1,
-                  ),
-                  Text(
-                    "${weatherState.current.current.temperature} °C",
-                    style: titleStyle,
-                  ),
-                ],
-              )
-            : CircularProgressIndicator();
-      },
-    );
-  }
+
 
   Widget _decorationBox() {
     return Transform.rotate(
@@ -270,12 +218,7 @@ class MainScreen extends StatelessWidget {
         ]);
   }
 
-  void getLocation() async {
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    await Redux.store.dispatch(StartLoadingWeatherAction(
-        apiKey, position.latitude, position.longitude));
-  }
+
 }
 
 class RefreshItemsAction {

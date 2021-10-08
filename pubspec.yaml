@@ -42,7 +42,7 @@ dependencies:
   money2: ^1.4.3
   loading_gifs: ^0.2.3
   flutter_speed_dial: ^2.1.1
-  flutter_svg: ^0.18.0
+  flutter_svg: ^0.20.0-nullsafety.3
   qr_code_scanner: ^0.3.5
   qr_flutter: ^3.2.0
 dependency_overrides:

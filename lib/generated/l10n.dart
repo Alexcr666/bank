@@ -155,16 +155,6 @@ class AppLocalizations {
     );
   }
 
-  /// `See weather`
-  String get seeMore {
-    return Intl.message(
-      'See weather',
-      name: 'seeMore',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `An error has been ocurred, contact with the administrator`
   String get apiError {
     return Intl.message(

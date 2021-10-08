@@ -27,20 +27,28 @@ class _LoginScreenState extends State<LoginScreen> {
       converter: (store) => LoginViewModel.fromStore(store),
       distinct: false,
       builder: (_, viewModel) => Scaffold(
+        backgroundColor: AppColors.mainColor,
         body: SafeArea(
           child: Container(
               child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 200.0),
-                Container(
-                  child: Center(
-                    child: Image(
-                      image: AssetImage(AssetsRoutes.loginIcon),
-                      height: 120.0,
+                SizedBox(height: 100.0),
+                Row(
+                  children: [
+                    Container(
+                      child: Center(
+                        child: Image(
+                          image: AssetImage(AssetsRoutes.loginIcon),
+                          height: 120.0,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                  ),
+                    Text("Bank",style: TextStyle(color: Colors.white,fontSize: 40),)
+                  ],
                 ),
+                SizedBox(height: 30.0),
                 Form(
                   key: _formKey,
                   child: Column(
@@ -81,8 +89,11 @@ class _LoginScreenState extends State<LoginScreen> {
         child: TextFormField(
           keyboardType: TextInputType.visiblePassword,
           initialValue: password,
+          style: TextStyle(color: Colors.white),
           obscureText: true,
           decoration: InputDecoration(
+            labelStyle:   TextStyle(color: Colors.white.withOpacity(0.4)),
+            hintStyle: TextStyle(color: Colors.white.withOpacity(0.4)),
             labelText: AppLocalizations.of(context).password,
           ),
           onChanged: (value) {
@@ -105,9 +116,12 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: TextFormField(
+          style: TextStyle(color: Colors.white),
           keyboardType: TextInputType.emailAddress,
           initialValue: email,
           decoration: InputDecoration(
+            labelStyle:  TextStyle(color: Colors.white.withOpacity(0.4)),
+            hintStyle: TextStyle(color: Colors.white.withOpacity(0.4)),
             hintText: 'example@gmail.con',
             labelText: AppLocalizations.of(context).email,
           ),
@@ -136,9 +150,9 @@ class _LoginScreenState extends State<LoginScreen> {
           child: loginView.isLoading == true
               ? CircularProgressIndicator()
               : Text(AppLocalizations.of(context).signIn,
-                  style: TextStyle(color: AppColors.fontColor, fontSize: 15.0)),
+                  style: TextStyle(color: AppColors.mainColor, fontSize: 15.0)),
         ),
-        color: AppColors.mainColor,
+        color:Colors.white,
         onPressed: () {
           if (!_formKey.currentState.validate()) return;
           try {

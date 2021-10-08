@@ -2,7 +2,7 @@ import 'package:bank_todo/data/networking/api.dart';
 import 'package:bank_todo/redux/app_reducer.dart';
 import 'package:bank_todo/redux/app_state.dart';
 import 'package:bank_todo/redux/user/user_middleware.dart';
-import 'package:bank_todo/redux/weather/weather_middleware.dart';
+
 import 'package:redux/redux.dart';
 
 class Redux {
@@ -21,6 +21,6 @@ class Redux {
   static Future<void> init() async {
     _store = Store<AppState>(appReducer,
         initialState: new AppState.initial(),
-        middleware: [LoginMiddleware(api), WeatherMiddleware(api)]);
+        middleware: [LoginMiddleware(api)]);
   }
 }

@@ -61,6 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 20.0,
                       ),
+                      SizedBox(height: 30.0),
                       _submitButtom(context, viewModel)
                     ],
                   ),
@@ -146,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return RaisedButton(
         elevation: 5.0,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 85.0, vertical: 25.0),
+          padding: EdgeInsets.symmetric(horizontal: 120, vertical: 25.0),
           child: loginView.isLoading == true
               ? CircularProgressIndicator()
               : Text(AppLocalizations.of(context).signIn,
